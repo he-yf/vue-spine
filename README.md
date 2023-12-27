@@ -5,6 +5,21 @@
 
 ## 使用方式
 
+npm install vue-spine
+
+
+main.ts
+```vue
+import { createApp } from 'vue'
+import App from './App.vue'
+import vueSpine from 'vue-spine'
+import 'vue-spine/es/style.css'
+
+createApp(App).use(vueSpine).mount('#app')
+
+
+```
+
 ```vue
 <script setup lang="ts">
 import { computed, ref } from 'vue';

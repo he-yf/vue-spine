@@ -9,6 +9,7 @@ import dts from "vite-plugin-dts"
 export default defineConfig({
   plugins: [
     vue({ reactivityTransform: true }),
+    // 生成d.ts文件声明
     dts({
       outDir: ['es', 'lib', 'dist/@types'],
       tsconfigPath: join(__dirname, './tsconfig.json'),
@@ -39,14 +40,14 @@ export default defineConfig({
           preserveModules: true, //保留原目录结构
           exports: "named", //指定导出方式
           dir: "es",   //配置打包根目录
-        },
+        }, // 输出es模块
         {
           format: "cjs",
           entryFileNames: "[name].js",
           preserveModules: true,
           exports: "named",
           dir: "lib",
-        }
+        } // 输出commonjs模块
       ]
     },
   }
